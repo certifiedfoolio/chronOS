@@ -4,7 +4,7 @@ ARG SOURCE_SUFFIX="-main"
 ARG SOURCE_TAG="latest"
 
 # Prepare the base image
-FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
+FROM https://quay.io/repository/fedora/fedora-silverblue:42-x86_64
 COPY / /ctx
 
 # Install programs
@@ -13,5 +13,4 @@ RUN bash /ctx/system/compile/apx.sh
 # Begin regular build jobs
 RUN mkdir -p /var/lib/alternatives && \
     /ctx/build.sh && \
-    mv /var/lib/alternatives /staged-alternatives && \
     ostree container commit

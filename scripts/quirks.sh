@@ -14,7 +14,7 @@ rm /usr/share/apx/stacks/vanilla.yaml \
 
 # copy/move system files
 cp -r /ctx/system/firstsetup /etc/
-cp -r /ctx/services/system/* /etc/systemd/system/
+# cp -r /ctx/services/system/* /etc/systemd/system/
 cp -r /ctx/services/user/* /etc/systemd/user/
 mv /nix /etc/sysnix
 
